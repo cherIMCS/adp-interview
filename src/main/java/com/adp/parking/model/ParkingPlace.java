@@ -7,10 +7,9 @@ public class ParkingPlace {
     private double rateByHour;
     private double timeParking;
 
-    public ParkingPlace(String type,int identificationNumber, double rateByHour, double timeParking){
+    public ParkingPlace(String type,int identificationNumber, double timeParking){
        this.type=type;
        this.identificationNumber=identificationNumber;
-       this.rateByHour=rateByHour;
        this.timeParking=timeParking;
     }
 
@@ -31,7 +30,14 @@ public class ParkingPlace {
     }
 
     public double getRateByHour() {
-        return rateByHour;
+
+        double fixRate;
+        if(this.timeParking<1){
+            fixRate = 2;
+        }else{
+            fixRate = 2*this.timeParking;
+        }
+        return fixRate;
     }
 
     public void setRateByHour(double rateByHour) {

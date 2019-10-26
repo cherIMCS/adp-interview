@@ -36,7 +36,7 @@ public class ServiceParking {
         List<ParkingPlace> listAvailableSpaces = new ArrayList<ParkingPlace>();
         for (Map.Entry<ParkingPlace,Boolean> entry: parkingSpaces.entrySet()){
             if(!(entry.getValue())){
-                revenue=revenue+(entry.getKey().getRateByHour()*entry.getKey().getTimeParking());
+                revenue=revenue+(entry.getKey().getRateByHour());
             }
         }
 
